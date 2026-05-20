@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginStepDef {
 
-    WebDriver driver;
+    public static WebDriver driver;
+
     LoginPage loginPage;
 
     @Given("User berada di halaman login")
@@ -55,8 +56,6 @@ public class LoginStepDef {
                 driver.getCurrentUrl()
                         .contains("inventory")
         );
-
-        driver.quit();
     }
 
     @Then("Error message tampil")
@@ -69,7 +68,5 @@ public class LoginStepDef {
         System.out.println(
                 loginPage.getErrorMessage()
         );
-
-        driver.quit();
     }
 }
